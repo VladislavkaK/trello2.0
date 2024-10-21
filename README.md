@@ -26,3 +26,4 @@ project from https://www.youtube.com/watch?v=-7K_0NRLCu4&ab_channel=REDGroup
 2. Prisma (https://github.com/prisma/prisma)
 3. PostgreSQL
 4. Transactions
+5. (сложная) Authorization (login/register with access + refresh tokens(no body)), refresh token должен всегда быть в cookies
