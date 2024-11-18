@@ -25,18 +25,18 @@ export class TimeBlockController {
 
   @UsePipes(new ValidationPipe())
   @HttpCode(200)
-  @Put(':id')
-  @Auth()
-  async update(@Body() dto: TimeBlockDto, @CurrentUser('id') userId: string, @Param('id') id: string) {
-    return this.timeBlockService.update(dto, id, userId);
-  }
-
-  @UsePipes(new ValidationPipe())
-  @HttpCode(200)
   @Put('update-order')
   @Auth()
   updateOrder(@Body() updateOrderDto: UpdateOrderDto) {
     return this.timeBlockService.updateOrder(updateOrderDto.ids);
+  }
+
+  @UsePipes(new ValidationPipe())
+  @HttpCode(200)
+  @Put(':id')
+  @Auth()
+  async update(@Body() dto: TimeBlockDto, @CurrentUser('id') userId: string, @Param('id') id: string) {
+    return this.timeBlockService.update(dto, id, userId);
   }
 
   @HttpCode(200)
